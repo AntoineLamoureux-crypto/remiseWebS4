@@ -1,0 +1,39 @@
+
+<div class="container">
+  <h1>Validation des informations du citoyen pour la demande du permis santé et test</h1>
+    <div class="form-group">
+      <label for="exampleInputEmail1">Veuillez entrer votre age</label>
+      <input type="name" class="form-control" [(ngModel)]= "age" id="age" placeholder="Entrez votre nom d'utilisateur">
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Votre numéro d'assurance social</label>
+      <input type="name" class="form-control" [(ngModel)]="num_social" id="num_social" placeholder="Entrez votre ot de passe">
+    </div>
+    <div *ngIf="infoPermis != ''">
+        <h3 class="has-info">{{infoPermis}}</h3>
+    </div>
+    <ng-container *ngIf="showVerifyButton">
+        <div>
+            <button (click)="onValidate()" class="btn btn-primary">Vérifier</button>
+        </div>
+    </ng-container>
+    
+    <ng-container>
+      <br>
+        <div *ngIf="showAplySanteButton"> 
+          <button (click)="onReadyClick('/subscribe')" [(ngModel)]= "type_permis" class="btn btn-primary btn-sucess">Appliquer dès maintenant pour le permis vaccin pour un adulte</button>
+          <br><br>
+          <button (click)="onReadyClick('/subscribeEnfant')" class="btn btn-primary btn-danger">Appliquer dès maintenant pour le permis vaccin pour un enfant</button>
+        </div>
+        <br>
+        <div *ngIf="showAplyTestButton">
+          <button (click)="onReadyClick('/subscribe')" class="btn btn-primary btn-sucess">Appliquer dès maintenant pour le permis test pour un adulte</button>
+          <br><br>
+          <button (click)="onReadyClick('/subscribeEnfant')" class="btn btn-primary btn-danger">Appliquer dès maintenant pour le permis test pour un enfant</button>
+      </div>
+      <div *ngIf="showAplyErrorButton">
+        <button (click)="onReadyClick('/home')" class="btn btn-primary btn-danger">Contacter le support</button>
+    </div>
+    </ng-container>
+    
+</div>

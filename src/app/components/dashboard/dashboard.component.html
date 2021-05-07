@@ -1,0 +1,41 @@
+
+<header>
+<nav class="navbar navbar-expand-md">
+<ul class="navbar-nav">
+    <li>
+        <a *ngIf="service.userIsLoggedIn()"
+            routerLink = "/logout"
+            class ="nav-link">Logout
+        </a>
+    </li>
+</ul>
+</nav>
+
+</header>
+<section>
+    <div class="container">
+        <br><br>
+        <h1>Hello : {{citizen.prenom}} {{citizen.nom}} </h1>
+        <h3>Bienvenue dans votre dashboard</h3>
+        <p>Numéro Social : <input type="text" [(ngModel)] = "citizen.numSocial" readonly></p>
+        <p>Email : <input type="text" [(ngModel)] = "citizen.email" readonly></p>
+        <p>Téléphone : <input type="text" [(ngModel)] = "citizen.num_telphone" readonly></p>
+        <a [routerLink]="[ '/renewAdultPermit']"><button class="btn btn-warning mr-2 mb-2">Renouveler votre permis</button></a>
+        <button (click)="afficherPermit(citizen.numSocial)" class="btn btn-primary btn-sucess">Affichier le permis</button>
+    <table>
+        <tbody>
+            <tr *ngFor="let citizenEnfant of listCitizenEnfant; let i = index">
+              <th scope="row">{{citizenEnfant.numSocial}}</th>
+              <td>{{citizenEnfant.nom}}</td>
+              <td>{{citizenEnfant.prenom}}</td>
+              <td>{{citizenEnfant.type_permis}}</td>
+              <a [routerLink]="[ '/renewChildPermit']"><button class="btn btn-warning mr-2 mb-2">Renouveler le permis</button></a>
+              <a><button  (click)="afficherEnfant(citizenEnfant)" class="btn btn-success mr-2 mb-2">Afficher enfant</button></a>
+              <button (click)="afficherPermit(citizenEnfant.numSocial)" class="btn btn-primary btn-sucess">Affichier le permis</button>
+            </tr>
+            <br>
+          </tbody>
+        </table>
+        <a [routerLink]="[ '/demande']"><button class="btn btn-success mb-2 mr-2">Appliquer pour une demande permis enfant</button></a>
+    </div>
+</section>

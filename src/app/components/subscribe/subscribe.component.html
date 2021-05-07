@@ -1,0 +1,51 @@
+<div class="container">
+  <br>
+  <h1>Demande de permis</h1>
+  <br>
+<form [formGroup]="subscribeForm" (ngSubmit)="onSubscribe()">
+    <div class="form-group">
+      <label for="exampleInputEmail1">Votre nom d'utilisateur</label>
+      <input type="name" class="form-control"  formControlName="username" id="userameSub" placeholder="Entrez votre nom d'utilisateur">
+      <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Votre mot de passe</label>
+      <input type="password" class="form-control" formControlName="password" id="passwordSub" placeholder="Entrez votre ot de passe">
+    </div>
+    <div class="form-group">
+        <label for="exampleInputEmail1">Votre nom prénom</label>
+        <input type="name" class="form-control"  formControlName="prenom" id="prenomSub" placeholder="Entrez votre nom prénom">
+        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Votre nom</label>
+        <input type="name" class="form-control" formControlName="nom" id="nomSub" placeholder="Entrez votre nom">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputEmail1">Votre adresse courriel</label>
+        <input type="email" class="form-control"  formControlName="email" id="emailSub" placeholder="Entrez votre adresse couriel">
+        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Votre numéro d'assurance sociale</label>
+        <input type="name" class="form-control" formControlName="num_social" id="num_socialSub" placeholder="Entrez votre numéro d'assurance social">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Votre age</label>
+        <input type="name" class="form-control" formControlName="age" id="ageSub" placeholder="Entrez votre age">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Numéro de téléphone</label>
+        <input type="name" class="form-control" formControlName="num_telphone" id="num_elephoneSub" placeholder="Entrez votre téléphone">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Votre sexe</label>
+        <input type="name" class="form-control" formControlName="sexe" id="sexeSub" placeholder="Entrez votre sexe">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Le type de permis en demande</label>
+        <input type="name" class="form-control" formControlName="type_permis" id="typePermisSub">
+      </div>
+    <button type="submit" class="btn btn-primary">Faire la demande</button>
+  </form>
+</div>
